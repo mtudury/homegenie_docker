@@ -1,2 +1,2 @@
 #!/bin/bash
-export dhgversion=0.2
+export dhgversion=0.3

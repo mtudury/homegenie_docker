@@ -6,6 +6,12 @@ RUN wget https://github.com/genielabs/HomeGenie/releases/download/v1.3-stable.5/
 
 RUN tar xzf homegenie_1.3-stable.5.tgz
 
+# Homegenie.exe is build from here :
+# https://github.com/mtudury/HomeGenie/tree/feature/mqttpersistentclient
+# fork with more features using MQTT and allow raw .net class programs
+
+COPY HomeGenie.exe /homegenie/HomeGenie.exe
+
 RUN echo "Europe/Paris" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
